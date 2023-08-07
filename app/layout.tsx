@@ -1,4 +1,4 @@
-import "@/styles/globals.css";
+import "./globals.css";
 import { Navigation } from "../src/layouts/Navigation";
 import { Footer } from "../src/layouts/Footer";
 import { EPageType, getProps } from "../src/services/content/getProps";

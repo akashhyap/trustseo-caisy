@@ -4,6 +4,11 @@ export type BlogArticleMeta = {
   __typename?: "BlogArticle";
   id?: string | null;
   slug?: string | null;
+  seo?: {
+    title?: string | null;
+  };
+  teaserDesciption?: string | null;
+  teaserImage?: string | null;
   _meta?: {
     __typename?: "CaisyDocument_Meta";
     publishedAt?: any | null;
@@ -15,7 +20,10 @@ export interface GetAllBlogArticles {
   arr?: BlogArticleMeta[];
 }
 
-export const getAllBlogArticles = async ({ after, arr = [] }: GetAllBlogArticles): Promise<BlogArticleMeta[]> => {
+export const getAllBlogArticles = async ({
+  after,
+  arr = [],
+}: GetAllBlogArticles): Promise<BlogArticleMeta[]> => {
   const { allBlogArticle } = await caisySDK.allBlogArticleMeta({ after });
 
   allBlogArticle?.edges?.forEach((edge) => {
