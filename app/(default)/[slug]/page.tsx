@@ -1,11 +1,11 @@
-import { Page } from "../../src/layouts/Page";
-import { getAllPages } from "../../src/services/content/getAllPages";
-import { getProps, EPageType } from "../../src/services/content/getProps";
+import { Page } from "../../../src/layouts/Page";
+import { getAllPages } from "../../../src/services/content/getAllPages";
+import { getProps, EPageType } from "../../../src/services/content/getProps";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import { Maybe } from "graphql/jsutils/Maybe";
-import { getMetadataProps } from "../../src/services/content/getHeadProps";
-import { IGenSeoInformation } from "../../src/services/graphql/__generated/sdk";
+import { getMetadataProps } from "../../../src/services/content/getHeadProps";
+import { IGenSeoInformation } from "../../../src/services/graphql/__generated/sdk";
 
 export async function generateMetadata({ params }): Promise<Metadata> {
   let slug = params?.slug as string;
