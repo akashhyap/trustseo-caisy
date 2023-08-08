@@ -22,7 +22,7 @@ export default async function page({ params }) {
   const resPage = await getProps({ slug, pageType: EPageType.Blog });
   if (resPage?.is404) notFound();
 
-  return <>1000 {resPage?.BlogArticle && <FullText {...resPage?.BlogArticle} />}</>;
+  return <>{resPage?.BlogArticle && <FullText {...resPage?.BlogArticle} />}</>;
 }
 
 export async function generateStaticParams() {
