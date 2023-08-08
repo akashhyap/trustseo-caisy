@@ -46,8 +46,8 @@ export default async function page({ params }) {
 
 
   return <>{slug !== "blog" ? pageResponse?.Page && <Page {...pageResponse?.Page} /> : (
-    <>01
-      <div className="bg-white py-24 sm:py-32">
+    <>
+      <div className="bg-white py-14">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             {pages.map((page) => {
@@ -82,25 +82,9 @@ export default async function page({ params }) {
                     objectFit="contain"
                     className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
                   />
-                  {/* <img
-                                src={post.imageUrl}
-                                alt=""
-                                className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
-                            /> */}
                   <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
                 </div>
                 <div className="max-w-xl">
-                  {/* <div className="mt-8 flex items-center gap-x-4 text-xs">
-                                <time dateTime={post.datetime} className="text-gray-500">
-                                    {post.date}
-                                </time>
-                                <a
-                                    href={post.category.href}
-                                    className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
-                                >
-                                    {post.category.title}
-                                </a>
-                            </div> */}
                   <div className="group relative">
                     <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
                       <Link href={`/${article?.slug}`}>
@@ -117,8 +101,6 @@ export default async function page({ params }) {
         </div>
       </div>
     </>
-
-
   )}</>;
 }
 
