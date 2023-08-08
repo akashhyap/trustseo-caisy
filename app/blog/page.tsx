@@ -3,8 +3,6 @@ import { getAllPages } from "../../src/services/content/getAllPages";
 import { getAllBlogArticles } from "../../src/services/content/getAllBlogArticle"
 import Image from "next/image";
 import { RichTextRenderer } from "@caisy/rich-text-react-renderer";
-import { DocumentLink } from "../../src/components/fulltext/overwrites/DocumentLink";
-import { FullText } from "../../src/components/fulltext/FullText";
 
 const allArticles = async () => {
     const data = await getAllBlogArticles({});
@@ -22,7 +20,26 @@ const Blog = async () => {
         <>
             <div className="bg-white py-24 sm:py-32">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
-
+                    <div className="mx-auto max-w-2xl text-center">
+                        {pages.map((page) => {
+                            if (page.slug === "blog") {
+                                return (
+                                    <div key={page.id}>
+                                        {/* @ts-ignore */}
+                                        {page.components.map((component) => {
+                                            const text = component.text;
+                                            return (
+                                                <div key={component.id} className="[&>h1]:text-3xl [&>h1]:sm:text-4xl [&>h1]:font-bold [&>p]:text-lg [&>p]:mt-2 tracking-tight text-gray-900">
+                                                    {text?.json && <RichTextRenderer node={text?.json} />}
+                                                </div>
+                                            );
+                                        })}
+                                    </div>
+                                );
+                            }
+                            return null;
+                        })}
+                    </div>
                     <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
                         {articles.map(article => (
                             <article key={article.id} className="flex flex-col items-start justify-between">

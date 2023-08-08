@@ -27,7 +27,7 @@ export default async function page({ params }) {
     notFound();
   }
 
-  return <>{pageResponse?.Page && <Page {...pageResponse?.Page} />}</>;
+  return <>10 {pageResponse?.Page && <Page {...pageResponse?.Page} />}</>;
 }
 
 export async function generateStaticParams() {
