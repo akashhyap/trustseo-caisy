@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { getAllPages } from "../../../../src/services/content/getAllPages";
-import { getAllBlogArticles } from "../../../../src/services/content/getAllBlogArticle"
+import { getAllPages } from "../../src/services/content/getAllPages";
+import { getAllBlogArticles } from "../../src/services/content/getAllBlogArticle"
 import Image from "next/image";
 import { RichTextRenderer } from "@caisy/rich-text-react-renderer";
 
