@@ -27,8 +27,9 @@ export default async function page({ params }) {
   if (pageResponse?.is404) {
     notFound();
   }
+  console.log("slug", slug);
 
-  return <>10 {pageResponse?.Page && <Page {...pageResponse?.Page} />}</>;
+  return <>{slug !== "blog" ? pageResponse?.Page && <Page {...pageResponse?.Page} /> : " :)) "}</>;
 }
 
 export async function generateStaticParams() {
